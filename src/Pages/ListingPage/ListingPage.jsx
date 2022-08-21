@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react'
 import { getBlogs } from '../../Services/getBlogs';
 import { useNavigate } from 'react-router-dom'
 import { PrimaryButton, BlogCard, Header } from '../../Components/index';
+import { useTheme } from '../../Context/theme-provider';
 import './listingpage.css'
 
 
 const ListingPage = () => {
   const navigate = useNavigate()
   const [blogList, setBlogList] = useState(null);
-  
 
   useEffect(()=>{
     (async()=>{

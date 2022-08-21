@@ -14,6 +14,10 @@
   font-size: 1.1rem;
 }
 
+#dark .blog-subtitle-input,#dark .blog-title-input{
+  background-color: var(--black);
+}
+
 .blog-subtitle-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-family: 'Inter';
   font-weight: 500;

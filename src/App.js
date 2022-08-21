@@ -1,10 +1,12 @@
 import './App.css';
 import { CreatePage, ListingPage, ErrorPage, SingleBlogPage } from './Pages/index'
 import { Routes, Route } from 'react-router-dom';
+import { useTheme } from './Context/theme-provider'
 
 function App() {
+  const { theme } = useTheme()
   return (
-    <div className="App">
+    <div className="App" id={theme}>
       <Routes>
         <Route path="/" element={<ListingPage />} />
         <Route path="/create" element={<CreatePage />} />
