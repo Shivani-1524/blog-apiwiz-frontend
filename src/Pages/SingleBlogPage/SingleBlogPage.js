@@ -59,7 +59,7 @@ const SingleBlogPage = () => {
 
             {blogDetails?.banner && <img className='cover-img' src={blogDetails.banner} alt={blogDetails.title} />}
             <div className='display-blog-layout'>
-                {blogDetails ? <ReactMarkdown>{blogDetails.content}</ReactMarkdown> : <p>Loading...</p>}
+                {blogDetails ? <ReactMarkdown>{blogDetails.content}</ReactMarkdown> : <p className='txt-center'>Loading...</p>}
             </div>
         </div>
     )

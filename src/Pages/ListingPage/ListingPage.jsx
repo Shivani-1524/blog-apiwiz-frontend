@@ -25,11 +25,11 @@ const ListingPage = () => {
 
   return (
     <>
-    {blogList ? 
+    
     <div className='page-layout'>
       <Header children={<PrimaryButton text="Write a Blog" onclick={()=>navigate('/create')} />} />
-    
       <div className="divider"></div>
+     {blogList ? 
       <section className="blog-listing">
         {/* smallscr center-content */}
         {blogList.length > 0 ? 
@@ -41,11 +41,10 @@ const ListingPage = () => {
           })}
         </div> : 
         <p>No Blogs To Show Yet</p>}
-
-      </section>
+      </section> :
+       <p className='txt-center'>Loading...</p>}
       
-    </div> : 
-    <p>Loading...</p>}
+    </div> 
     
     </>
   )
