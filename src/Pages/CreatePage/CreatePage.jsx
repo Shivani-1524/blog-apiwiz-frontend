@@ -110,21 +110,21 @@ const CreatePage = () => {
         onChange={(e)=>{
             setBlogContent({...blogContent, title: e.target.value})  
         }} />
-        {blogErrors.title && <p className="error-txt">{errors.title}</p>}
+        {blogErrors.title && <p className="error-txt">{blogErrors.title}</p>}
 
         <label className='sr-only' htmlFor="blog-subtitle">Subtitle</label>
         <input placeholder='Article subtitle...(optional)' className='blog-subtitle-input' id="blog-subtitle" type="text" value={blogContent.subtitle} 
         onChange={(e)=>{
             setBlogContent({...blogContent, subtitle: e.target.value})  
         }} />
-
+  {blogErrors.content && <p className="error-txt">{blogErrors.content}</p>}
         <div className="divider mg-t-10 mg-b-10"></div>
         <div className="tools-row">
             <BsFillEyeFill onClick={()=>{setPreviewMode(true)}} className='icon-md' />
             <BsFillPencilFill onClick={()=>{setPreviewMode(false)}} className='icon-md' />
         </div>
           {previewMode && <div className="divider mg-b-10 mg-t-10"></div>}
-          {blogErrors.content && <p className="error-txt">{errors.content}</p>}
+          <div className="divider mg-b-10 mg-t-10 sm-show"></div>
         {previewMode ?  <BlogPreview blogContent={blogContent} /> :
         <BlogInput setBlogContent={setBlogContent} blogContent={blogContent} />}
     </div>

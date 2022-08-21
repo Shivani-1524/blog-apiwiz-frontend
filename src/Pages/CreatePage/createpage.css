@@ -36,7 +36,6 @@
   font-size: 2.5rem;
 }
 
-
 .img-preview{
     height: 20rem;
     width: 95%;
@@ -57,5 +56,14 @@
 .tools-row.txt-area{
   justify-content: end;
   margin-right: 20px;
+}
+.sm-show{
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .sm-show{
+    display: block;
+  }
 }
 
