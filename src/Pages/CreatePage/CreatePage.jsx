@@ -18,6 +18,7 @@ const CreatePage = () => {
   const [blogContent, setBlogContent] = useState(initialBlogContent)
   const [previewMode, setPreviewMode] = useState(false)
   const [imageSelected, setImageSelected] = useState(null)
+  const [blogErrors, setBlogErrors] = useState({})
   let errors = {}
 
   
@@ -40,7 +41,7 @@ const CreatePage = () => {
     }
     if(!blogData.content){
       errors.content = "Content is a required field"
-    }else if(blogData.content.length > 49){
+    }else if(blogData.content.length < 49){
       errors.content = "Please make sure your blog is atleast 50 characters"
     }
     return errors
@@ -48,8 +49,11 @@ const CreatePage = () => {
   }
 
   const uploadBlog = async (blogData) => {
-    const blogErrors = validateBlog(blogData)
-    if (Object.keys(blogErrors).length === 0){
+    const errorResult = validateBlog(blogData)
+    setBlogErrors(errorResult)
+    console.log("BLOG ERRORS",errorResult )
+    console.log("BLOG DATA 201",blogData)
+    if (Object.keys(errorResult ).length === 0){
       if(imageSelected){
         const res = await uploadImage(imageSelected)
         const {data, success} = await postBlog({...blogData, banner: res.url})
@@ -106,7 +110,7 @@ const CreatePage = () => {
         onChange={(e)=>{
             setBlogContent({...blogContent, title: e.target.value})  
         }} />
-        {errors.title && <p className="error-txt">{errors.title}</p>}
+        {blogErrors.title && <p className="error-txt">{errors.title}</p>}
 
         <label className='sr-only' htmlFor="blog-subtitle">Subtitle</label>
         <input placeholder='Article subtitle...(optional)' className='blog-subtitle-input' id="blog-subtitle" type="text" value={blogContent.subtitle} 
@@ -120,7 +124,7 @@ const CreatePage = () => {
             <BsFillPencilFill onClick={()=>{setPreviewMode(false)}} className='icon-md' />
         </div>
           {previewMode && <div className="divider mg-b-10 mg-t-10"></div>}
-          {errors.content && <p className="error-txt">{errors.content}</p>}
+          {blogErrors.content && <p className="error-txt">{errors.content}</p>}
         {previewMode ?  <BlogPreview blogContent={blogContent} /> :
         <BlogInput setBlogContent={setBlogContent} blogContent={blogContent} />}
     </div>

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const postBlog = async (blogData) => {
     try {
-        const res = await axios.post("http://localhost:3001/createBlog", blogData)
+        const res = await axios.post(`${process.env.REACT_APP_SECRET_URL}/createBlog`, blogData)
         return {
             data: res.data,
             success: true

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const getBlog = async (blogId) => {
     try {
-        const { data } = await axios.get(`http://localhost:3001/getBlog/${blogId}`);
+        const { data } = await axios.get(`${process.env.REACT_APP_SECRET_URL}/getBlog/${blogId}`);
         return {
             data,
             success: true,

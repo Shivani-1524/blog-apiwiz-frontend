@@ -6,6 +6,7 @@
     border: none;
     font-size: 1.1rem;
     word-wrap: break-word;
-    height: 100vh;
-    overflow:hidden
+    height: 90vh;
+    overflow:hidden;
+    margin-bottom: 2rem;
 }
