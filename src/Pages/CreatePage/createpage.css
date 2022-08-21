@@ -9,7 +9,7 @@
   outline: none;
   height: 3rem;
   border: none;
-  font-family: 'Inter';
+  font-family: 'Alegreya Sans', sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
 }
@@ -19,7 +19,7 @@
 }
 
 .blog-subtitle-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  font-family: 'Inter';
+  font-family: 'Alegreya Sans', sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
 }
@@ -29,13 +29,13 @@
   outline: none;
   height: 3rem;
   border: none;
-  font-family: 'Inter';
+  font-family: 'Literata', serif;
   font-weight: 800;
   font-size: 2.5rem;
 }
 
 .blog-title-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  font-family: 'Inter';
+  font-family: 'Alegreya Sans', sans-serif;
   font-weight: 800;
   font-size: 2.5rem;
 }
