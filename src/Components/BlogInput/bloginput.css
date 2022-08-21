@@ -10,3 +10,8 @@
     overflow:hidden;
     margin-bottom: 2rem;
 }
+
+#dark .blog-content{
+    background-color: var(--black);
+    color: white;
+}

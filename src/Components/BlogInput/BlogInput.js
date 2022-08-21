@@ -80,7 +80,7 @@ const BlogInput = ({ setBlogContent, blogContent }) => {
                     setBlogContent({ ...blogContent, content: editTextArea(blogContent.content, textAreaRef.current.selectionStart, '[Link](http://example.com)') })
                     textAreaRef.current.focus()
                 }} />
-                <a href="https://commonmark.org/help/" target="_blank" rel="noreferrer noopener" className="icon-text">Guide</a>
+                <a href="https://commonmark.org/help/" target="_blank" rel="noreferrer noopener" className="icon-text blogcontent-link">Guide</a>
             </div>
             <div className="divider mg-b-10 mg-t-10"></div>
             <textarea placeholder='Tell your story...' ref={textAreaRef} className='blog-content' value={blogContent.content}
